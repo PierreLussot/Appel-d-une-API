@@ -4,24 +4,30 @@ fetchUsers = async () => {
   let req = "https://jsonplaceholder.typicode.com/users";
   let data = await fetch(req);
   let response = await data.json();
-  console.log(response);
 
   response.forEach((element) => {
     const cell = document.createElement("div");
-    const cellname = document.createElement("p");
+    const cardClient = document.createElement("div");
+    const nameClient = document.createElement("div");
+    const emailClient = document.createElement("div");
+    const phoneClient = document.createElement("div");
+    const cellName = document.createElement("p");
     const cellEmail = document.createElement("p");
-    const cellphone = document.createElement("p");
+    const cellPhone = document.createElement("p");
 
-    cell.classList.add("item");
+    cell.classList.add("card-client");
+    cardClient.classList.add("card-client");
+    nameClient.classList.add("name-client");
+    emailClient.classList.add("email-client");
+    phoneClient.classList.add("phone-client");
 
-    cellname.innerHTML = element.name;
+    cellName.innerHTML = element.name;
     cellEmail.innerHTML = element.email;
-    cellphone.innerHTML = element.phone;
+    cellPhone.innerHTML = element.phone;
 
-    cell.appendChild(cellname);
+    cell.appendChild(cellName);
     cell.appendChild(cellEmail);
-    cell.appendChild(cellphone);
-
+    cell.appendChild(cellPhone);
     grid.appendChild(cell);
   });
 };
