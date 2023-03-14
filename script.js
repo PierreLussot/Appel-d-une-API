@@ -8,13 +8,19 @@ fetchUsers = async () => {
 
   response.forEach((element) => {
     const cell = document.createElement("div");
+    const cellname = document.createElement("p");
+    const cellEmail = document.createElement("p");
+    const cellphone = document.createElement("p");
+
     cell.classList.add("item");
 
-    const cellpara = document.createElement("p");
-    cellpara.innerHTML = element.name;
-    cellpara.appendChild(cell);
+    cellname.innerHTML = element.name;
+    cellEmail.innerHTML = element.email;
+    cellphone.innerHTML = element.phone;
 
-    console.log(element.name);
+    cell.appendChild(cellname);
+    cell.appendChild(cellEmail);
+    cell.appendChild(cellphone);
 
     grid.appendChild(cell);
   });
